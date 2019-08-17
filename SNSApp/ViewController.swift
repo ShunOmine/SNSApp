@@ -11,21 +11,12 @@ import UIKit
 import FirebaseFirestore
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // セルの数は投稿情報の数
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        
-        return cell
-    }
-    
     // インスタンス化
     let db = Firestore.firestore()
+    
+    // 更新
+    let refreshControl = UIRefreshControl()
+    
     // Table View
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,6 +28,56 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.delegate = self
         tableView.dataSource = self
+        // refreshControlに文言を追加
+        refreshControl.attributedTitle = NSAttributedString(string: "引っ張って更新")
+        // アクションを指定
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        fetch()
+        // リロード
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // セルの数は投稿情報の数
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        // itemsの中からindexPathのrow番目を取得
+        let dict = items[(indexPath as NSIndexPath).row]
+        // プロフィール画像
+        let profileImageView = cell.viewWithTag(1) as! UIImageView
+        // 画像情報
+        let profImage = dict["profileImage"]
+        // NSData型に変換
+        let dataProfImage = NSData(base64Encoded: profImage as! String ,options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
+        // さらにUIImage型へ変換
+        let decodeProfImage = UIImage(data: dataProfImage! as Data)
+        // prfileImageViewへ代入
+        profileImageView.image = decodeProfImage
+        // 丸くする
+        profileImageView.layer.cornerRadius = 8.0
+        profileImageView.clipsToBounds = true
+        
+        // ユーザー名
+        let userNameLabel = cell.viewWithTag(2) as! UILabel
+        userNameLabel.text = dict["userName"] as? String
+        
+        // 投稿画像
+        let postImageView = cell.viewWithTag(3) as! UIImageView
+        let postImage = (dict["postImage"])
+        let dataPostImage = NSData(base64Encoded: postImage as! String, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
+        let decodePostImage = UIImage(data: dataPostImage! as Data)
+        postImageView.image = decodePostImage
+        
+        // コメント
+        let commentTextView = cell.viewWithTag(4) as! UITextView
+        commentTextView.text = dict["comment"] as? String
+        
+        return cell
     }
     
     // カメラボタンを押した処理
@@ -100,6 +141,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    // データの取得
+    func fetch() {
+        db.collection("users")
+            .getDocuments() {(querysnapshot, err) in
+                
+                var tempItems = [NSDictionary]()
+                for item in querysnapshot!.documents {
+                    
+                    let dict = item.data()
+                    tempItems.append(dict as NSDictionary)
+                }
+                self.items = tempItems
+                // 順番を入れ替え
+                self.items = self.items.reversed()
+                // リロード
+                self.tableView.reloadData()
+        }
+    }
+    
+    // 更新
+    @objc func refresh() {
+        // 初期化
+        items = [NSDictionary]()
+        // データをサーバから取得
+        fetch()
+        // リロード
+        tableView.reloadData()
+        // リフレッシュ終了
+        refreshControl.endRefreshing()
+    }
 
 }
 

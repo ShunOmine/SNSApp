@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,20 +10,96 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profie View Controller-->
         <scene sceneID="ijS-PA-gvS">
             <objects>
-                <viewController storyboardIdentifier="profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VpO-KW-z6y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VpO-KW-z6y" customClass="ProfieViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dL5-pW-r9a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zg0-Is-OYB">
+                                <rect key="frame" x="67" y="44" width="241" height="160"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeC-GN-jsv">
+                                <rect key="frame" x="67" y="267" width="241" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Kh4-WA-PFr"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYa-nX-4WC">
+                                <rect key="frame" x="5" y="363" width="365" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="XPB-fI-Mff"/>
+                                </constraints>
+                                <state key="normal" title="プロフ画像変更">
+                                    <color key="titleColor" red="0.97254901959999995" green="0.98431372549999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeProfPhoto:" destination="VpO-KW-z6y" eventType="touchUpInside" id="0f3-gT-C0I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6R-1B-eou">
+                                <rect key="frame" x="5" y="469" width="365" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="NDv-bf-Eg6"/>
+                                </constraints>
+                                <state key="normal" title="決定">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.97254901959999995" green="0.98431372549999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="VpO-KW-z6y" eventType="touchUpInside" id="qZT-ST-Qds"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0F-Ds-wh2">
+                                <rect key="frame" x="0.0" y="628" width="375" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.1362545923" blue="0.1319105491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="XHq-9w-egF"/>
+                                </constraints>
+                                <state key="normal" title="ログアウト">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="VpO-KW-z6y" eventType="touchUpInside" id="CWN-4h-uW2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="icB-Zo-YQn" firstAttribute="trailing" secondItem="y0F-Ds-wh2" secondAttribute="trailing" id="0Mx-cF-LN0"/>
+                            <constraint firstItem="y0F-Ds-wh2" firstAttribute="top" secondItem="K6R-1B-eou" secondAttribute="bottom" constant="114" id="0cC-ta-GJ1"/>
+                            <constraint firstItem="icB-Zo-YQn" firstAttribute="trailing" secondItem="K6R-1B-eou" secondAttribute="trailing" constant="5" id="4ce-H4-sQT"/>
+                            <constraint firstItem="aYa-nX-4WC" firstAttribute="top" secondItem="EeC-GN-jsv" secondAttribute="bottom" constant="51" id="6e0-Fz-jfP"/>
+                            <constraint firstItem="EeC-GN-jsv" firstAttribute="leading" secondItem="zg0-Is-OYB" secondAttribute="leading" id="Fql-4C-0hw"/>
+                            <constraint firstItem="icB-Zo-YQn" firstAttribute="bottom" secondItem="EeC-GN-jsv" secondAttribute="bottom" constant="466" id="GZd-Xl-0ox"/>
+                            <constraint firstItem="aYa-nX-4WC" firstAttribute="leading" secondItem="icB-Zo-YQn" secondAttribute="leading" constant="5" id="JSd-hF-fOk"/>
+                            <constraint firstItem="EeC-GN-jsv" firstAttribute="centerX" secondItem="dL5-pW-r9a" secondAttribute="centerX" id="OoP-Xy-aub"/>
+                            <constraint firstItem="zg0-Is-OYB" firstAttribute="top" secondItem="icB-Zo-YQn" secondAttribute="top" id="RXQ-Yh-CLq"/>
+                            <constraint firstItem="EeC-GN-jsv" firstAttribute="leading" secondItem="icB-Zo-YQn" secondAttribute="leading" constant="67" id="SjD-Fd-08d"/>
+                            <constraint firstItem="K6R-1B-eou" firstAttribute="top" secondItem="aYa-nX-4WC" secondAttribute="bottom" constant="61" id="nQ4-iD-Fsx"/>
+                            <constraint firstItem="EeC-GN-jsv" firstAttribute="top" secondItem="zg0-Is-OYB" secondAttribute="bottom" constant="63" id="tNa-zs-mcp"/>
+                            <constraint firstItem="K6R-1B-eou" firstAttribute="leading" secondItem="icB-Zo-YQn" secondAttribute="leading" constant="5" id="vlO-CE-v2z"/>
+                            <constraint firstItem="y0F-Ds-wh2" firstAttribute="leading" secondItem="icB-Zo-YQn" secondAttribute="leading" id="wOd-hQ-I7K"/>
+                            <constraint firstItem="EeC-GN-jsv" firstAttribute="trailing" secondItem="zg0-Is-OYB" secondAttribute="trailing" id="ypp-TO-dv0"/>
+                            <constraint firstItem="icB-Zo-YQn" firstAttribute="trailing" secondItem="aYa-nX-4WC" secondAttribute="trailing" constant="5" id="zcX-Al-OvH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="icB-Zo-YQn"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="zg0-Is-OYB" id="rCC-yE-YTi"/>
+                        <outlet property="userNameTextField" destination="EeC-GN-jsv" id="r69-Ak-cQh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIu-jE-Q01" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="77"/>
+            <point key="canvasLocation" x="-212" y="76.847290640394093"/>
         </scene>
     </scenes>
 </document>

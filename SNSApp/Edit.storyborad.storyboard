@@ -89,6 +89,7 @@
                     <connections>
                         <outlet property="commentTextView" destination="jsC-u7-ajA" id="ie6-i1-kJE"/>
                         <outlet property="postImageView" destination="XwZ-29-aYF" id="jJ5-CY-3yA"/>
+                        <outlet property="profileImageView" destination="6Qg-tn-cXA" id="eoh-Jg-pW4"/>
                         <outlet property="profileImgeView" destination="6Qg-tn-cXA" id="Jyz-pI-End"/>
                         <outlet property="profileNameLabel" destination="xem-6c-ojS" id="PCp-Tq-i63"/>
                     </connections>
