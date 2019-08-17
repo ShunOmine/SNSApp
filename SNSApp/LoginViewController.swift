@@ -54,13 +54,15 @@ class LoginViewController: UIViewController {
                 // エラーアラートの表示
                 self.showErrorAlert(error: error)
             } else {
+                // 成功時の処理
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let main = storyboard.instantiateViewController(withIdentifier: "Main")
+                self.present(main, animated: true, completion: nil)
+                print("成功")
             }
         })
     }
     
-    func toTimeLine() {
-        
-    }
     
     // 入力されているか確認
     func validateTextField() {
