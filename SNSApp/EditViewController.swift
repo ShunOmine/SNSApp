@@ -27,7 +27,6 @@ class EditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("jkjjhjhjhjhjhjhjjjhhjhjhhjhj")
         // pickerで選択した画像を反映
         postImageView.image = editImage
         // イメージビューの角を丸くする

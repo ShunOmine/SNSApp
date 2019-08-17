@@ -38,15 +38,15 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="350" id="hb6-Kr-Vmv">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="350"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="509" id="hb6-Kr-Vmv">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="509"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hb6-Kr-Vmv" id="ecY-ok-F4c">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="349.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="508.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="tyZ-oT-m33">
-                                                    <rect key="frame" x="15" y="11" width="345" height="328"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="487"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="JWg-VW-7xb">
                                                             <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
@@ -69,13 +69,16 @@
                                                             </constraints>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YuB-mH-H64">
-                                                            <rect key="frame" x="0.0" y="83" width="345" height="142"/>
+                                                            <rect key="frame" x="0.0" y="83" width="345" height="230"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="YuB-mH-H64" secondAttribute="height" multiplier="3:2" id="NIw-gT-p5U"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pv1-xc-6GH">
-                                                            <rect key="frame" x="0.0" y="258" width="345" height="70"/>
+                                                            <rect key="frame" x="0.0" y="346" width="345" height="141"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="70" id="bsH-gB-1qf"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Vn5-vO-r7u"/>
                                                             </constraints>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
