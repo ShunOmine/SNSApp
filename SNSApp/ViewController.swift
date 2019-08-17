@@ -51,7 +51,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // プロフィール画像
         let profileImageView = cell.viewWithTag(1) as! UIImageView
         // 画像情報
-        let profImage = dict["profileImage"]
+        guard let profImage = dict["profileImage"] else {
+            return cell
+        }
         // NSData型に変換
         let dataProfImage = NSData(base64Encoded: profImage as! String ,options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
         // さらにUIImage型へ変換
@@ -126,9 +128,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // 写真が選択された時に呼ばれる
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("hello hello")
         // 画像情報の存在確認
         if let pickedImage = info[.originalImage] as? UIImage {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Edit", bundle: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Edit.storyborad", bundle: nil)
             guard let vc = storyboard.instantiateViewController(withIdentifier: "Edit") as? EditViewController else {
                 print("編集画面への遷移失敗")
                 return
@@ -143,7 +146,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // データの取得
     func fetch() {
-        db.collection("users")
+        db.collection("user")
             .getDocuments() {(querysnapshot, err) in
                 
                 var tempItems = [NSDictionary]()

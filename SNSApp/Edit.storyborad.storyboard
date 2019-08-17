@@ -13,7 +13,7 @@
         <!--Edit View Controller-->
         <scene sceneID="Rar-dI-I8e">
             <objects>
-                <viewController id="hhN-WZ-4BC" customClass="EditViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Edit" id="hhN-WZ-4BC" customClass="EditViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WZI-u9-EES">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,14 +89,13 @@
                     <connections>
                         <outlet property="commentTextView" destination="jsC-u7-ajA" id="ie6-i1-kJE"/>
                         <outlet property="postImageView" destination="XwZ-29-aYF" id="jJ5-CY-3yA"/>
-                        <outlet property="profileImageView" destination="6Qg-tn-cXA" id="eoh-Jg-pW4"/>
-                        <outlet property="profileImgeView" destination="6Qg-tn-cXA" id="Jyz-pI-End"/>
+                        <outlet property="profileImageView" destination="6Qg-tn-cXA" id="dAR-Xz-JYs"/>
                         <outlet property="profileNameLabel" destination="xem-6c-ojS" id="PCp-Tq-i63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVg-7x-ntG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153.62318840579712" y="91.741071428571431"/>
+            <point key="canvasLocation" x="152.80000000000001" y="91.625615763546804"/>
         </scene>
     </scenes>
 </document>

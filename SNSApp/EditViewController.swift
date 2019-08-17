@@ -27,6 +27,7 @@ class EditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("jkjjhjhjhjhjhjhjjjhhjhjhhjhj")
         // pickerで選択した画像を反映
         postImageView.image = editImage
         // イメージビューの角を丸くする
@@ -63,12 +64,14 @@ class EditViewController: UIViewController {
         // 辞書ごとFirestoreの"user"へpost
         db.collection("user").addDocument(data: user as! [String : Any])
         
+        self.dismiss(animated: true)
+        
         // 画面遷移(タイムラインへ)
-        // rootViewControllerの1つ先のViewControllerに戻る
-        //        navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
-        //        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let vc = storyboard.instantiateViewController(withIdentifier: "Main")
-        //        self.present(vc, animated: true)
+//         rootViewControllerの1つ先のViewControllerに戻る
+//        navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "Main")
+//        self.present(vc, animated: true)
 
     }
     
