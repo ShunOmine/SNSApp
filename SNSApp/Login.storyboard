@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rCC-o7-uQf">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,17 +14,17 @@
             <objects>
                 <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rCC-o7-uQf" customClass="LoginViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mW0-CA-HeD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign_in - Sign_up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pD-o2-Cyd">
-                                <rect key="frame" x="130" y="117" width="154" height="21"/>
+                                <rect key="frame" x="110.66666666666669" y="124.00000000000001" width="154" height="20.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tc3-yR-2Kh" customClass="CustomField" customModuleProvider="target">
-                                <rect key="frame" x="77" y="202" width="260" height="45"/>
+                                <rect key="frame" x="77" y="208.66666666666666" width="221" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="4tZ-D3-zq4"/>
@@ -45,7 +45,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccN-Jn-VP5" customClass="CustomField" customModuleProvider="target">
-                                <rect key="frame" x="77" y="282" width="260" height="45"/>
+                                <rect key="frame" x="77" y="288.66666666666669" width="221" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="7CR-cc-mu8"/>
@@ -66,7 +66,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBD-pM-Kfo" customClass="CustomButton" customModuleProvider="target">
-                                <rect key="frame" x="77" y="377" width="260" height="45"/>
+                                <rect key="frame" x="77" y="383.66666666666669" width="221" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="a4J-XZ-WWc"/>
@@ -84,7 +84,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gw-IS-MBi" customClass="CustomButton" customModuleProvider="target">
-                                <rect key="frame" x="77" y="469" width="260" height="45"/>
+                                <rect key="frame" x="77" y="475.66666666666669" width="221" height="45.000000000000057"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="hPp-2X-DZu"/>
@@ -98,20 +98,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginUser:" destination="rCC-o7-uQf" eventType="touchUpInside" id="eQz-ro-C71"/>
                                     <action selector="loginUserWithSender:" destination="rCC-o7-uQf" eventType="touchUpInside" id="9hD-6x-ezX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.98431372549019602" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="9pD-o2-Cyd" firstAttribute="top" secondItem="0fW-Pm-C08" secondAttribute="top" constant="80" id="Glj-BO-Sml"/>
                             <constraint firstItem="ccN-Jn-VP5" firstAttribute="leading" secondItem="Tc3-yR-2Kh" secondAttribute="leading" id="Ia7-Gh-0Nj"/>
                             <constraint firstItem="oBD-pM-Kfo" firstAttribute="trailing" secondItem="3gw-IS-MBi" secondAttribute="trailing" id="Iah-h1-fFm"/>
                             <constraint firstItem="oBD-pM-Kfo" firstAttribute="trailing" secondItem="ccN-Jn-VP5" secondAttribute="trailing" id="KSd-yn-QyC"/>
                             <constraint firstItem="Tc3-yR-2Kh" firstAttribute="leading" secondItem="0fW-Pm-C08" secondAttribute="leading" constant="77" id="Nyc-31-GGX"/>
                             <constraint firstItem="Tc3-yR-2Kh" firstAttribute="centerX" secondItem="mW0-CA-HeD" secondAttribute="centerX" id="RXp-1Z-fRh"/>
                             <constraint firstItem="3gw-IS-MBi" firstAttribute="top" secondItem="oBD-pM-Kfo" secondAttribute="bottom" constant="47" id="TEy-1o-CgM"/>
-                            <constraint firstItem="0fW-Pm-C08" firstAttribute="bottom" secondItem="Tc3-yR-2Kh" secondAttribute="bottom" constant="615" id="ZxL-wz-8wG"/>
                             <constraint firstItem="ccN-Jn-VP5" firstAttribute="trailing" secondItem="Tc3-yR-2Kh" secondAttribute="trailing" id="Zxj-AS-4ji"/>
                             <constraint firstItem="oBD-pM-Kfo" firstAttribute="top" secondItem="ccN-Jn-VP5" secondAttribute="bottom" constant="50" id="bIZ-5R-cMU"/>
                             <constraint firstItem="Tc3-yR-2Kh" firstAttribute="centerX" secondItem="9pD-o2-Cyd" secondAttribute="centerX" id="hDb-jK-gac"/>
